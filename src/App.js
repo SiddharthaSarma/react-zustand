@@ -5,7 +5,7 @@ import { useThemeStore } from "./store/themestore";
 
 function App() {
   const dark = useThemeStore((state) => state.dark);
-  const setTheme = useThemeStore(state => state.toggleDarkMode);
+  const toggleDarkMode = useThemeStore(state => state.toggleDarkMode);
   useEffect(() => {
     if (dark) {
       document.body.classList.add("dark");
@@ -15,7 +15,7 @@ function App() {
   }, [dark]);
   return (
     <>
-      <button onClick={setTheme}>Toggle theme</button>
+      <button onClick={toggleDarkMode}>Toggle theme</button>
       <h1>People list</h1>
       <AddPeople />
       <PeopleList />
